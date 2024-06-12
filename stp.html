@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock paper Scissors</title>
+    </head>
+    <body>
+        <p>Rock paper scissors!!!</p>
+        <button onclick="
+        
+            pickMove();
+            
+            let result='';
+            if (compMove === 'rock') {
+                result='Tie';
+            }else if (compMove === 'paper') {
+                result='You lose';
+            }else if (compMove==='scissors') {
+                result='You Win';
+            }
+                    
+            if (result==='You Win') {
+                score.wins+=1;
+            }else if (result==='You lose') {
+                score.lose+=1;
+            }else if (result==='Tie') {
+                score.ties+=1;
+            }
+
+            alert(`You chose Rock. Computer chose ${compMove}.${result}
+win: ${score.wins},losses: ${score.lose},ties: ${score.ties}`);
+            
+        
+        
+        ">Rock</button>
+        <button
+        onclick="
+        pickMove();
+        let result='';
+
+        if (compMove === 'rock') {
+            result='You Win';
+        }else if (compMove === 'paper') {
+            result='Tie';
+        }else if (compMove==='scissors') {
+            result='You lose';
+        }
+                        
+        if (result==='You Win') {
+            score.wins+=1;
+        }else if (result==='You lose') {
+            score.lose+=1;
+        }else if (result==='Tie') {
+            score.ties+=1;
+        }
+
+         alert(`You chose Paper. Computer chose ${compMove}.${result}
+wins: ${score.wins},losses: ${score.lose},ties: ${score.ties}`);">Paper</button>
+        <button onclick="
+        pickMove();
+        let result='';
+        if (compMove === 'rock') {
+            result='You lose';
+        }else if (compMove === 'paper') {
+            result='You Win';
+        }else if (compMove==='scissors') {
+            result='Tie';          
+        }
+
+        if (result==='You Win') {
+           score.wins+=1;
+        }else if (result==='You lose') {
+           score.lose+=1;
+        }else if (result==='Tie') {
+            score.ties+=1;
+        }
+
+         alert(`You chose Scissors. Computer chose ${compMove}.${result}
+win: ${score.wins},losses: ${score.lose},ties: ${score.ties}`);
+         ">Scissors</button>
+
+         <p>A small game By Me For Toss!!</p>
+        
+        <script>
+            const score= {
+                wins:0,
+                lose:0,
+                ties:0
+            };
+            
+            let compMove='';
+            function pickMove(){
+                const randomNumber=Math.random()
+                
+                if (randomNumber>=0 && randomNumber <1/3) {
+                    compMove='rock'
+                }else if (randomNumber>=1/3 && randomNumber<2/3) {
+                    compMove='paper'
+                }else if (randomNumber>=2/3 && randomNumber<1) {
+                    compMove='scissors'
+                }
+                
+            }
+
+        </script>
+    </body>
+</html>
